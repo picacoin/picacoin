@@ -1,0 +1,33 @@
+# /etc/conf.d/picacoind: config file for /etc/init.d/picacoind
+
+# Config file location
+#PICACOIND_CONFIGFILE="/etc/picacoin/picacoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $PICACOIND_USER)
+#PICACOIND_PIDDIR="/var/run/picacoind"
+
+# What filename to give the pidfile
+#PICACOIND_PIDFILE="${PICACOIND_PIDDIR}/picacoind.pid"
+
+# Where to write picacoind data (be mindful that the blockchain is large)
+#PICACOIND_DATADIR="/var/lib/picacoind"
+
+# User and group to own picacoind process
+#PICACOIND_USER="picacoin"
+#PICACOIND_GROUP="picacoin"
+
+# Path to picacoind executable
+#PICACOIND_BIN="/usr/bin/picacoind"
+
+# Nice value to run picacoind under
+#PICACOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#PICACOIND_OPTS=""
+
+# The timeout in seconds OpenRC will wait for picacoind to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+PICACOIND_SIGTERM_TIMEOUT=600

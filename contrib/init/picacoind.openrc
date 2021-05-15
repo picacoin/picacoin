@@ -1,0 +1,93 @@
+#!/sbin/openrc-run
+
+# backward compatibility for existing gentoo layout 
+#
+if [ -d "/var/lib/picacoin/.picacoin" ]; then
+	PICACOIND_DEFAULT_DATADIR="/var/lib/picacoin/.picacoin"
+else
+	PICACOIND_DEFAULT_DATADIR="/var/lib/picacoind"
+fi
+
+PICACOIND_CONFIGFILE=${PICACOIND_CONFIGFILE:-/etc/picacoin/picacoin.conf}
+PICACOIND_PIDDIR=${PICACOIND_PIDDIR:-/var/run/picacoind}
+PICACOIND_PIDFILE=${PICACOIND_PIDFILE:-${PICACOIND_PIDDIR}/picacoind.pid}
+PICACOIND_DATADIR=${PICACOIND_DATADIR:-${PICACOIND_DEFAULT_DATADIR}}
+PICACOIND_USER=${PICACOIND_USER:-${PICACOIN_USER:-picacoin}}
+PICACOIND_GROUP=${PICACOIND_GROUP:-picacoin}
+PICACOIND_BIN=${PICACOIND_BIN:-/usr/bin/picacoind}
+PICACOIND_NICE=${PICACOIND_NICE:-${NICELEVEL:-0}}
+PICACOIND_OPTS="${PICACOIND_OPTS:-${PICACOIN_OPTS}}"
+
+name="Picacoin Core Daemon"
+description="Picacoin cryptocurrency P2P network daemon"
+
+command="/usr/bin/picacoind"
+command_args="-pid=\"${PICACOIND_PIDFILE}\" \
+		-conf=\"${PICACOIND_CONFIGFILE}\" \
+		-datadir=\"${PICACOIND_DATADIR}\" \
+		-daemon \
+		${PICACOIND_OPTS}"
+
+required_files="${PICACOIND_CONFIGFILE}"
+start_stop_daemon_args="-u ${PICACOIND_USER} \
+			-N ${PICACOIND_NICE} -w 2000"
+pidfile="${PICACOIND_PIDFILE}"
+
+# The retry schedule to use when stopping the daemon. Could be either
+# a timeout in seconds or multiple signal/timeout pairs (like
+# "SIGKILL/180 SIGTERM/300")
+retry="${PICACOIND_SIGTERM_TIMEOUT}"
+
+depend() {
+	need localmount net
+}
+
+# verify
+# 1) that the datadir exists and is writable (or create it)
+# 2) that a directory for the pid exists and is writable
+# 3) ownership and permissions on the config file
+start_pre() {
+	checkpath \
+	-d \
+	--mode 0750 \
+	--owner "${PICACOIND_USER}:${PICACOIND_GROUP}" \
+	"${PICACOIND_DATADIR}"
+
+	checkpath \
+	-d \
+	--mode 0755 \
+	--owner "${PICACOIND_USER}:${PICACOIND_GROUP}" \
+	"${PICACOIND_PIDDIR}"
+
+	checkpath -f \
+	-o "${PICACOIND_USER}:${PICACOIND_GROUP}" \
+	-m 0660 \
+	"${PICACOIND_CONFIGFILE}"
+
+	checkconfig || return 1
+}
+
+checkconfig()
+{
+	if grep -qs '^rpcuser=' "${PICACOIND_CONFIGFILE}" && \
+		! grep -qs '^rpcpassword=' "${PICACOIND_CONFIGFILE}" ; then
+		eerror ""
+		eerror "ERROR: You must set a secure rpcpassword to run picacoind."
+		eerror "The setting must appear in ${PICACOIND_CONFIGFILE}"
+		eerror ""
+		eerror "This password is security critical to securing wallets "
+		eerror "and must not be the same as the rpcuser setting."
+		eerror "You can generate a suitable random password using the following "
+		eerror "command from the shell:"
+		eerror ""
+		eerror "bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'"
+		eerror ""
+		eerror "It is recommended that you also set alertnotify so you are "
+		eerror "notified of problems:"
+		eerror ""
+		eerror "ie: alertnotify=echo %%s | mail -s \"Picacoin Alert\"" \
+			"admin@foo.com"
+		eerror ""
+		return 1
+	fi
+}
