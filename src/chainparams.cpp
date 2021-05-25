@@ -91,7 +91,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nTimeout = 1628640000; // August 11th, 2021
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].min_activation_height = 709632; // Approximately November 12th, 2021
 
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000900090009");
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000161f2e78138590");
         consensus.defaultAssumeValid = uint256S("0x0000000000000000000b9d2ec5a352ecba0592946514a92f14319dc2b367fc72"); // 654683
 
         /**
@@ -117,16 +117,8 @@ public:
         // possible options.
         // This is fine at runtime as we'll fall back to using them as an addrfetch if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
-        // release ASAP to avoid it where possible.
-        //vSeeds.emplace_back("seed.picacoin.sipa.be"); // Pieter Wuille, only supports x1, x5, x9, and xd
-        //vSeeds.emplace_back("dnsseed.bluematt.me"); // Matt Corallo, only supports x9
-        //vSeeds.emplace_back("dnsseed.picacoin.dashjr.org"); // Luke Dashjr
-        //vSeeds.emplace_back("seed.picacoinstats.com"); // Christian Decker, supports x1 - xf
-        //vSeeds.emplace_back("seed.picacoin.jonasschnelli.ch"); // Jonas Schnelli, only supports x1, x5, x9, and xd
-        //vSeeds.emplace_back("seed.btc.petertodd.org"); // Peter Todd, only supports x1, x5, x9, and xd
-        //vSeeds.emplace_back("seed.picacoin.sprovoost.nl"); // Sjors Provoost
-        //vSeeds.emplace_back("dnsseed.emzy.de"); // Stephan Oeste
-        vSeeds.emplace_back("159.89.188.140:2313"); // Jason Maurice
+        // release ASAP to avoid it where possible
+        vSeeds.emplace_back("159.89.188.140:2313");
 	
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -157,7 +149,7 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Data from RPC: getchaintxstats 4096 0000000000000000000b9d2ec5a352ecba0592946514a92f14319dc2b367fc72
+            
             /* nTime    */ 1603995752,
             /* nTxCount */ 582083445,
             /* dTxRate  */ 3.508976121410527,
@@ -201,7 +193,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nTimeout = 1628640000; // August 11th, 2021
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].min_activation_height = 0; // No activation delay
 
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000900090009");
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000161f2e78138590");
         consensus.defaultAssumeValid = uint256S("0x000000000000006433d1efec504c53ca332b64963c425395515b01977bd7b3b0"); // 1864000
 
         pchMessageStart[0] = 0x0b;
@@ -210,16 +202,15 @@ public:
         pchMessageStart[3] = 0x07;
         nDefaultPort = 18333;
         nPruneAfterHeight = 1000;
-        m_assumed_blockchain_size = 40;
-        m_assumed_chain_state_size = 2;
+        m_assumed_blockchain_size = 1;
+        m_assumed_chain_state_size = 1;
 
         genesis = CreateGenesisBlock(1620847566, 3005661206, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x00000000decb9cc2528a3817c887fa1f286e6d6710f3ecb80ae63f9e044deddb"));
         assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
 
-        vFixedSeeds.clear();
-        vSeeds.clear();
+         vSeeds.emplace_back("159.89.188.140:2313");
         // nodes with support for servicebits filtering should be at the top
        
 
@@ -245,14 +236,14 @@ public:
         };
 
         m_assumeutxo_data = MapAssumeutxo{
-            // TODO to be specified in a future patch.
+         // TODO to be specified in a future patch.
         };
 
         chainTxData = ChainTxData{
-            // Data from RPC: getchaintxstats 4096 000000000000006433d1efec504c53ca332b64963c425395515b01977bd7b3b0
-            /* nTime    */ 1603359686,
-            /* nTxCount */ 58090238,
-            /* dTxRate  */ 0.1232886622799463,
+            
+            /* nTime    */ 1603995752,
+            /* nTxCount */ 582083445,
+            /* dTxRate  */ 3.508976121410527,
         };
     }
 };
@@ -268,20 +259,18 @@ public:
 
         if (!args.IsArgSet("-signetchallenge")) {
             bin = ParseHex("512103ad5e0edad18cb1f0fc0d28a3d4f1f3e445640337489abb10404f2d1e086be430210359ef5021964fe22d6f8e05b2463c9540ce96883fe3b278760f048f5189f2e6c452ae");
-            vSeeds.emplace_back("178.128.221.177");
-            vSeeds.emplace_back("2a01:7c8:d005:390::5");
-            vSeeds.emplace_back("v7ajjeirttkbnt32wpy3c6w3emwnfr3fkla7hpxcfokr3ysd3kqtzmqd.onion:38333");
+          
 
-            consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000000019fd16269a");
+            consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000161f2e78138590");
             consensus.defaultAssumeValid = uint256S("0x0000002a1de0f46379358c1fd09906f7ac59adf3712323ed90eb59e4c183c020"); // 9434
             m_assumed_blockchain_size = 1;
             m_assumed_chain_state_size = 1;
-            chainTxData = ChainTxData{
-                // Data from RPC: getchaintxstats 4096 0000002a1de0f46379358c1fd09906f7ac59adf3712323ed90eb59e4c183c020
-                /* nTime    */ 1603986000,
-                /* nTxCount */ 9582,
-                /* dTxRate  */ 0.00159272030651341,
-            };
+               chainTxData = ChainTxData{
+            
+            /* nTime    */ 1603995752,
+            /* nTxCount */ 582083445,
+            /* dTxRate  */ 3.508976121410527,
+        };
         } else {
             const auto signet_challenge = args.GetArgs("-signetchallenge");
             if (signet_challenge.size() != 1) {
@@ -291,13 +280,14 @@ public:
 
             consensus.nMinimumChainWork = uint256{};
             consensus.defaultAssumeValid = uint256{};
-            m_assumed_blockchain_size = 0;
-            m_assumed_chain_state_size = 0;
-            chainTxData = ChainTxData{
-                0,
-                0,
-                0,
-            };
+            m_assumed_blockchain_size = 1;
+            m_assumed_chain_state_size = 1;
+             chainTxData = ChainTxData{
+            
+            /* nTime    */ 1603995752,
+            /* nTxCount */ 582083445,
+            /* dTxRate  */ 3.508976121410527,
+        };
             LogPrintf("Signet with challenge %s\n", signet_challenge[0]);
         }
 
@@ -349,7 +339,7 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x00000000decb9cc2528a3817c887fa1f286e6d6710f3ecb80ae63f9e044deddb"));
         assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
 
-        vFixedSeeds.clear();
+         vSeeds.emplace_back("159.89.188.140:2313");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
@@ -412,8 +402,8 @@ public:
         pchMessageStart[3] = 0xda;
         nDefaultPort = 18444;
         nPruneAfterHeight = gArgs.GetBoolArg("-fastprune", false) ? 100 : 1000;
-        m_assumed_blockchain_size = 0;
-        m_assumed_chain_state_size = 0;
+        m_assumed_blockchain_size = 1;
+        m_assumed_chain_state_size = 1;
 
         UpdateActivationParametersFromArgs(args);
 
@@ -436,22 +426,17 @@ public:
             }
         };
 
-        m_assumeutxo_data = MapAssumeutxo{
-            {
-                110,
-                {uint256S("0x1ebbf5850204c0bdb15bf030f47c7fe91d45c44c712697e4509ba67adb01c618"), 110},
-            },
-            {
-                210,
-                {uint256S("0x9c5ed99ef98544b34f8920b6d1802f72ac28ae6e2bd2bd4c316ff10c230df3f2"), 210},
-            },
+           m_assumeutxo_data = MapAssumeutxo{
+         // TODO to be specified in a future patch.
         };
 
         chainTxData = ChainTxData{
-            0,
-            0,
-            0
+            
+            /* nTime    */ 1603995752,
+            /* nTxCount */ 582083445,
+            /* dTxRate  */ 3.508976121410527,
         };
+    }
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
