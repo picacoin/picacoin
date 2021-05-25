@@ -19,7 +19,8 @@ with no central authority: managing transactions and issuing money are carried
 out collectively by the network. Picacoin Core is the name of open source
 software which enables the use of this currency.
 
-<!--For more information read the original Picacoin whitepaper.-->
+For more information read the original Picacoin whitepaper.
+https://drive.google.com/file/d/1T5Dg006tL2X7BgHVXkCMPn_Sv4e_I5gA/view
 
 License
 -------
