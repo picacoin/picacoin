@@ -2236,7 +2236,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Specify a custom fee per kB (1,000 bytes) of the transaction's virtual size.
 
-Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 satoshis.</source>
+Note:  Since the fee is calculated on a per-byte basis, a fee of "100 picaros per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 picaros.</source>
         <translation>Одредити прилагођену провизију по kB (1,000 битова) виртуелне величине трансакције. 
 
 Напомена: С обзиром да се провизија рачуна на основу броја бајтова, провизија за "100 сатошија по kB" за величину трансакције од 500 бајтова (пола од 1 kB) ће аутоматски износити само 50 сатошија.</translation>

@@ -24,24 +24,24 @@ enum class FeeEstimateMode {
 };
 
 /**
- * Fee rate in satoshis per kilobyte: CAmount / kB
+ * Fee rate in picaros per kilobyte: CAmount / kB
  */
 class CFeeRate
 {
 private:
-    CAmount nSatoshisPerK; // unit is satoshis-per-1,000-bytes
+    CAmount nSatoshisPerK; // unit is picaros-per-1,000-bytes
 
 public:
-    /** Fee rate of 0 satoshis per kB */
+    /** Fee rate of 0 picaros per kB */
     CFeeRate() : nSatoshisPerK(0) { }
     template<typename I>
     explicit CFeeRate(const I _nSatoshisPerK): nSatoshisPerK(_nSatoshisPerK) {
         // We've previously had bugs creep in from silent double->int conversion...
         static_assert(std::is_integral<I>::value, "CFeeRate should be used without floats");
     }
-    /** Constructor for a fee rate in satoshis per kvB (sat/kvB). The size in bytes must not exceed (2^63 - 1).
+    /** Constructor for a fee rate in picaros per kvB (sat/kvB). The size in bytes must not exceed (2^63 - 1).
      *
-     *  Passing an nBytes value of COIN (1e8) returns a fee rate in satoshis per vB (sat/vB),
+     *  Passing an nBytes value of COIN (1e8) returns a fee rate in picaros per vB (sat/vB),
      *  e.g. (nFeePaid * 1e8 / 1e3) == (nFeePaid / 1e5),
      *  where 1e5 is the ratio to convert from PIC/kvB to sat/vB.
      *
@@ -50,11 +50,11 @@ public:
      */
     CFeeRate(const CAmount& nFeePaid, size_t nBytes);
     /**
-     * Return the fee in satoshis for the given size in bytes.
+     * Return the fee in picaros for the given size in bytes.
      */
     CAmount GetFee(size_t nBytes) const;
     /**
-     * Return the fee in satoshis for a size of 1000 bytes
+     * Return the fee in picaros for a size of 1000 bytes
      */
     CAmount GetFeePerK() const { return GetFee(1000); }
     friend bool operator<(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK < b.nSatoshisPerK; }

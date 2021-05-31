@@ -2196,7 +2196,7 @@
     <message>
         <source>Specify a custom fee per kB (1,000 bytes) of the transaction's virtual size.
 
-Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 satoshis.</source>
+Note:  Since the fee is calculated on a per-byte basis, a fee of "100 picaros per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 picaros.</source>
         <translation>Tentukan biaya khusus per kB (1.000 byte) dari ukuran transaksi maya.
 
 Catatan: Karena biaya dihitung berdasarkan per byte, biaya "100 satoshi per kB" untuk ukuran transaksi 500 byte (setengah dari 1 kB) pada akhirnya akan menghasilkan biaya hanya 50 satoshi.</translation>

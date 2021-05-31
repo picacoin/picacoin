@@ -199,8 +199,8 @@ def assert_array_result(object_array, to_match, expected, should_not_find=False)
 def check_json_precision():
     """Make sure json library being used does not lose precision converting PIC values"""
     n = Decimal("20000000.00000003")
-    satoshis = int(json.loads(json.dumps(float(n))) * 1.0e8)
-    if satoshis != 2000000000000003:
+    picaros = int(json.loads(json.dumps(float(n))) * 1.0e8)
+    if picaros != 2000000000000003:
         raise RuntimeError("JSON encode/decode loses precision")
 
 

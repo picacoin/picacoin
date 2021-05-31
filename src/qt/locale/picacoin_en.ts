@@ -3291,7 +3291,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <location line="+77"/>
         <source>Specify a custom fee per kB (1,000 bytes) of the transaction&apos;s virtual size.
 
-Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satoshis per kB&quot; for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 satoshis.</source>
+Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 picaros per kB&quot; for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 picaros.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

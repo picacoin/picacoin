@@ -2206,10 +2206,10 @@
     <message>
         <source>Specify a custom fee per kB (1,000 bytes) of the transaction's virtual size.
 
-Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 satoshis.</source>
+Note:  Since the fee is calculated on a per-byte basis, a fee of "100 picaros per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 picaros.</source>
         <translation>Specificer et brugerdefineret gebyr per kB (1.000 bytes) af transaktionens virtuelle størrelse.
 
-Note: Siden gebyret er kalkuleret på en per-byte basis, et gebyr på "100 satoshis per kB" for en transkationsstørrelse på 500 bytes (halvdelen af 1kB) ville ultimativt udbytte et gebyr på kun 50 satoshis.</translation>
+Note: Siden gebyret er kalkuleret på en per-byte basis, et gebyr på "100 picaros per kB" for en transkationsstørrelse på 500 bytes (halvdelen af 1kB) ville ultimativt udbytte et gebyr på kun 50 picaros.</translation>
     </message>
     <message>
         <source>per kilobyte</source>
