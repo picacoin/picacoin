@@ -467,24 +467,24 @@ was already being broken by the move to descriptors.
   command line setting. The wallet will already fail to create transactions
   with fees higher than `-maxtxfee`. (#18467)
 
-- A new `fee_rate` parameter/option denominated in picaro per vbyte (sat/vB)
+- A new `fee_rate` parameter/option denominated in picaro per vbyte (pio/vB)
   is introduced to the `sendtoaddress`, `sendmany`, `fundrawtransaction` and
   `walletcreatefundedpsbt` RPCs as well as to the experimental new `send`
   RPC. The legacy `feeRate` option in `fundrawtransaction` and
   `walletcreatefundedpsbt` still exists for setting a fee rate in PIC per 1,000
   vbytes (PIC/kvB), but it is expected to be deprecated soon to avoid
   confusion. For these RPCs, the fee rate error message is updated from PIC/kB
-  to sat/vB and the help documentation in PIC/kB is updated to PIC/kvB. The
+  to pio/vB and the help documentation in PIC/kB is updated to PIC/kvB. The
   `send` and `sendtoaddress` RPC examples are updated to aid users in creating
   transactions with explicit fee rates. (#20305, #11413)
 
-- The `bumpfee` RPC `fee_rate` option is changed from PIC/kvB to sat/vB and the
+- The `bumpfee` RPC `fee_rate` option is changed from PIC/kvB to pio/vB and the
   help documentation is updated. Users are warned that this is a breaking API
   change, but it should be relatively benign: the large (100,000 times)
-  difference between PIC/kvB and sat/vB units means that a transaction with a
-  fee rate mistakenly calculated in PIC/kvB rather than sat/vB should raise an
+  difference between PIC/kvB and pio/vB units means that a transaction with a
+  fee rate mistakenly calculated in PIC/kvB rather than pio/vB should raise an
   error due to the fee rate being set too low. In the worst case, the
-  transaction may send at 1 sat/vB, but as Replace-by-Fee (BIP125 RBF) is active
+  transaction may send at 1 pio/vB, but as Replace-by-Fee (BIP125 RBF) is active
   by default when an explicit fee rate is used, the transaction fee can be
   bumped. (#20305)
 
@@ -712,7 +712,7 @@ Tests
 - #20378 Fix potential division by 0 in WalletLogPrintf (jonasschnelli)
 - #18836 Upgradewallet fixes and additional tests (achow101)
 - #20139 Do not return warnings from UpgradeWallet() (stackman27)
-- #20305 Introduce `fee_rate` sat/vB param/option (jonatack)
+- #20305 Introduce `fee_rate` pio/vB param/option (jonatack)
 - #20426 Allow zero-fee fundrawtransaction/walletcreatefundedpsbt and other fixes (jonatack)
 - #20573 wallet, bugfix: allow send with string `fee_rate` amounts (jonatack)
 
@@ -823,7 +823,7 @@ Tests
 - #18504 Drop picacoin-tx and picacoin-wallet dependencies on libevent (ryanofsky)
 - #18586 Bump gitian descriptors to 0.21 (laanwj)
 - #17595 guix: Enable building for `x86_64-w64-mingw32` target (dongcarl)
-- #17929 add linker optimisation flags to gitian & guix (Linux) (fanquake)
+- #17929 add linker optimipioion flags to gitian & guix (Linux) (fanquake)
 - #18556 Drop make dist in gitian builds (hebasto)
 - #18088 ensure we aren't using GNU extensions (fanquake)
 - #18741 guix: Make source tarball using git-archive (dongcarl)

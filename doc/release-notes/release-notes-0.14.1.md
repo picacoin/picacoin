@@ -93,7 +93,7 @@ git merge commit are mentioned.
 - #10204 `3c79602` Rename disconnectnode argument (jnewbery)
 
 ### Block and transaction handling
-- #10126 `0b5e162` Compensate for memory peak at flush time (sipa)
+- #10126 `0b5e162` Compenpioe for memory peak at flush time (sipa)
 - #9912 `fc3d7db` Optimize GetWitnessHash() for non-segwit transactions (sdaftuar)
 - #10133 `ab864d3` Clean up calculations of pcoinsTip memory usage (morcos)
 

@@ -109,7 +109,7 @@ BOOST_AUTO_TEST_CASE(ToStringTest)
     feeRate = CFeeRate(1);
     BOOST_CHECK_EQUAL(feeRate.ToString(), "0.00000001 PIC/kvB");
     BOOST_CHECK_EQUAL(feeRate.ToString(FeeEstimateMode::PIC_KVB), "0.00000001 PIC/kvB");
-    BOOST_CHECK_EQUAL(feeRate.ToString(FeeEstimateMode::SAT_VB), "0.001 sat/vB");
+    BOOST_CHECK_EQUAL(feeRate.ToString(FeeEstimateMode::SAT_VB), "0.001 pio/vB");
 }
 
 BOOST_AUTO_TEST_SUITE_END()

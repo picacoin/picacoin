@@ -12,7 +12,7 @@
 #include <string>
 
 const std::string CURRENCY_UNIT = "PIC"; // One formatted unit
-const std::string CURRENCY_ATOM = "sat"; // One indivisible minimum value unit
+const std::string CURRENCY_ATOM = "pio"; // One indivisible minimum value unit
 
 /* Used to determine type of fee estimation requested */
 enum class FeeEstimateMode {
@@ -20,7 +20,7 @@ enum class FeeEstimateMode {
     ECONOMICAL,   //!< Force estimateSmartFee to use non-conservative estimates
     CONSERVATIVE, //!< Force estimateSmartFee to use conservative estimates
     PIC_KVB,      //!< Use PIC/kvB fee rate unit
-    SAT_VB,       //!< Use sat/vB fee rate unit
+    SAT_VB,       //!< Use pio/vB fee rate unit
 };
 
 /**
@@ -39,11 +39,11 @@ public:
         // We've previously had bugs creep in from silent double->int conversion...
         static_assert(std::is_integral<I>::value, "CFeeRate should be used without floats");
     }
-    /** Constructor for a fee rate in picaro per kvB (sat/kvB). The size in bytes must not exceed (2^63 - 1).
+    /** Constructor for a fee rate in picaro per kvB (pio/kvB). The size in bytes must not exceed (2^63 - 1).
      *
-     *  Passing an nBytes value of COIN (1e8) returns a fee rate in picaro per vB (sat/vB),
+     *  Passing an nBytes value of COIN (1e8) returns a fee rate in picaro per vB (pio/vB),
      *  e.g. (nFeePaid * 1e8 / 1e3) == (nFeePaid / 1e5),
-     *  where 1e5 is the ratio to convert from PIC/kvB to sat/vB.
+     *  where 1e5 is the ratio to convert from PIC/kvB to pio/vB.
      *
      *  @param[in] nFeePaid  CAmount fee rate to construct with
      *  @param[in] nBytes    size_t bytes (units) to construct with
