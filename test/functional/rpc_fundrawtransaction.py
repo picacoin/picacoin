@@ -737,7 +737,7 @@ class RawTransactionsTest(PicacoinTestFramework):
         for param, zero_value in product(["fee_rate", "feeRate"], [0, 0.000, 0.00000000, "0", "0.000", "0.00000000"]):
             assert_equal(self.nodes[3].fundrawtransaction(rawtx, {param: zero_value})["fee"], 0)
 
-        # With no arguments passed, expect fee of 141 picaros.
+        # With no arguments passed, expect fee of 141 picaro.
         assert_approx(node.fundrawtransaction(rawtx)["fee"], vexp=0.00000141, vspan=0.00000001)
         # Expect fee to be 10,000x higher when an explicit fee rate 10,000x greater is specified.
         result = node.fundrawtransaction(rawtx, {"fee_rate": 10000})
@@ -894,7 +894,7 @@ class RawTransactionsTest(PicacoinTestFramework):
         assert_equal(share[2], share[3])
 
         # Output 0 takes at least as much share of the fee, and no more than 2
-        # picaros more, than outputs 2 and 3.
+        # picaro more, than outputs 2 and 3.
         assert_greater_than_or_equal(share[0], share[2])
         assert_greater_than_or_equal(share[2] + Decimal(2e-8), share[0])
 

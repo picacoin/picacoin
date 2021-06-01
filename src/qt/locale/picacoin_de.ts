@@ -807,7 +807,7 @@ Das Signieren ist nur mit Adressen vom Typ 'Legacy' möglich.</translation>
         <translation>Diese Bezeichnung wird rot, wenn irgendein Empfänger einen Betrag kleiner als die derzeitige "Staubgrenze" erhält.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 satoshi(s) per input.</source>
+        <source>Can vary +/- %1 picaro(s) per input.</source>
         <translation>Kann pro Eingabe um +/- %1 Satoshi(s) abweichen.</translation>
     </message>
     <message>
@@ -2400,7 +2400,7 @@ Das Signieren ist nur mit Adressen vom Typ 'Legacy' möglich.</translation>
     <message>
         <source>Specify a custom fee per kB (1,000 bytes) of the transaction's virtual size.
 
-Note:  Since the fee is calculated on a per-byte basis, a fee of "100 picaros per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 picaros.</source>
+Note:  Since the fee is calculated on a per-byte basis, a fee of "100 picaro per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 picaros.</source>
         <translation>Geben sie eine angepasste Gebühr pro kB (1.000 Byte) virtueller Größe der Transaktion an.
 
 Hinweis: Eine Gebühr von "100 Satoshis pro kB" bei einer Größe der Transaktion von 500 Byte (einem halben kB) würde eine Gebühr von 50 Satoshis ergeben, da die Gebühr pro Byte berechnet wird.</translation>

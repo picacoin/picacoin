@@ -16,20 +16,20 @@
 FUZZ_TARGET(fee_rate)
 {
     FuzzedDataProvider fuzzed_data_provider(buffer.data(), buffer.size());
-    const CAmount picaros_per_k = ConsumeMoney(fuzzed_data_provider);
-    const CFeeRate fee_rate{picaros_per_k};
+    const CAmount picaro_per_k = ConsumeMoney(fuzzed_data_provider);
+    const CFeeRate fee_rate{picaro_per_k};
 
     (void)fee_rate.GetFeePerK();
     const size_t bytes = fuzzed_data_provider.ConsumeIntegral<size_t>();
-    if (!MultiplicationOverflow(static_cast<int64_t>(bytes), picaros_per_k) && bytes <= static_cast<uint64_t>(std::numeric_limits<int64_t>::max())) {
+    if (!MultiplicationOverflow(static_cast<int64_t>(bytes), picaro_per_k) && bytes <= static_cast<uint64_t>(std::numeric_limits<int64_t>::max())) {
         (void)fee_rate.GetFee(bytes);
     }
     (void)fee_rate.ToString();
 
-    const CAmount another_picaros_per_k = ConsumeMoney(fuzzed_data_provider);
-    CFeeRate larger_fee_rate{another_picaros_per_k};
+    const CAmount another_picaro_per_k = ConsumeMoney(fuzzed_data_provider);
+    CFeeRate larger_fee_rate{another_picaro_per_k};
     larger_fee_rate += fee_rate;
-    if (picaros_per_k != 0 && another_picaros_per_k != 0) {
+    if (picaro_per_k != 0 && another_picaros_per_k != 0) {
         assert(fee_rate < larger_fee_rate);
         assert(!(fee_rate > larger_fee_rate));
         assert(!(fee_rate == larger_fee_rate));

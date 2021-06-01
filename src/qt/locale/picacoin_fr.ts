@@ -807,8 +807,8 @@ Il n’est possible de signer qu’avec les adresses de type « legacy ».</tr
         <translation>Cette étiquette devient rouge si un destinataire reçoit un montant inférieur au seuil actuel de poussière.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 satoshi(s) per input.</source>
-        <translation>Peut varier +/- %1 satoshi(s) par entrée.</translation>
+        <source>Can vary +/- %1 picaro(s) per input.</source>
+        <translation>Peut varier +/- %1 picaro(s) par entrée.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2404,10 +2404,10 @@ Il n’est possible de signer qu’avec les adresses de type « legacy ».</tr
     <message>
         <source>Specify a custom fee per kB (1,000 bytes) of the transaction's virtual size.
 
-Note:  Since the fee is calculated on a per-byte basis, a fee of "100 picaros per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 picaros.</source>
+Note:  Since the fee is calculated on a per-byte basis, a fee of "100 picaro per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 picaros.</source>
         <translation>Déterminer des frais personnalisés par Ko (1 000 octets) de la taille virtuelle de la transaction.
 
-Note : Les frais étant calculés par octet, des frais de « 100 picaros par Ko » pour une transaction d’une taille de 500 octets (la moitié de 1 Ko) donneront des frais de seulement 50 picaros.</translation>
+Note : Les frais étant calculés par octet, des frais de « 100 picaro par Ko » pour une transaction d’une taille de 500 octets (la moitié de 1 Ko) donneront des frais de seulement 50 picaros.</translation>
     </message>
     <message>
         <source>per kilobyte</source>

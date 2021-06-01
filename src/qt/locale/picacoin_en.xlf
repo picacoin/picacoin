@@ -1074,7 +1074,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
         <context-group purpose="location"><context context-type="linenumber">558</context></context-group>
       </trans-unit>
       <trans-unit id="_msg201">
-        <source xml:space="preserve">Can vary +/- %1 satoshi(s) per input.</source>
+        <source xml:space="preserve">Can vary +/- %1 picaro(s) per input.</source>
         <target xml:space="preserve"></target>
         <context-group purpose="location"><context context-type="linenumber">563</context></context-group>
       </trans-unit>
@@ -3455,7 +3455,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
       <trans-unit id="_msg626">
         <source xml:space="preserve">Specify a custom fee per kB (1,000 bytes) of the transaction&apos;s virtual size.
 
-Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 picaros per kB&quot; for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 picaros.</source>
+Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 picaro per kB&quot; for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 picaros.</source>
         <target xml:space="preserve"></target>
         <context-group purpose="location"><context context-type="linenumber">851</context></context-group>
       </trans-unit>

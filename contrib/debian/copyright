@@ -1,6 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Picacoin
-Upstream-Contact: Satoshi Nakamoto <satoshin@gmx.com>
+Upstream-Contact: Satoshi Nakamoto <picaron@gmx.com>
  irc://#picacoin@freenode.net
 Source: https://github.com/picacoin/picacoin
 

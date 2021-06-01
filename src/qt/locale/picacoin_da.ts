@@ -761,8 +761,8 @@
         <translation>Denne mærkat bliver rød, hvis en eller flere modtagere modtager et beløb, der er mindre end den aktuelle støvgrænse.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 satoshi(s) per input.</source>
-        <translation>Kan variere med ±%1 satoshi per input.</translation>
+        <source>Can vary +/- %1 picaro(s) per input.</source>
+        <translation>Kan variere med ±%1 picaro per input.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2206,10 +2206,10 @@
     <message>
         <source>Specify a custom fee per kB (1,000 bytes) of the transaction's virtual size.
 
-Note:  Since the fee is calculated on a per-byte basis, a fee of "100 picaros per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 picaros.</source>
+Note:  Since the fee is calculated on a per-byte basis, a fee of "100 picaro per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 picaros.</source>
         <translation>Specificer et brugerdefineret gebyr per kB (1.000 bytes) af transaktionens virtuelle størrelse.
 
-Note: Siden gebyret er kalkuleret på en per-byte basis, et gebyr på "100 picaros per kB" for en transkationsstørrelse på 500 bytes (halvdelen af 1kB) ville ultimativt udbytte et gebyr på kun 50 picaros.</translation>
+Note: Siden gebyret er kalkuleret på en per-byte basis, et gebyr på "100 picaro per kB" for en transkationsstørrelse på 500 bytes (halvdelen af 1kB) ville ultimativt udbytte et gebyr på kun 50 picaros.</translation>
     </message>
     <message>
         <source>per kilobyte</source>

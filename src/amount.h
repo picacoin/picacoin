@@ -8,12 +8,12 @@
 
 #include <stdint.h>
 
-/** Amount in picaros (Can be negative) */
+/** Amount in picaro (Can be negative) */
 typedef int64_t CAmount;
 
 static const CAmount COIN = 100000000;
 
-/** No amount larger than this (in satoshi) is valid.
+/** No amount larger than this (in picaro) is valid.
  *
  * Note that this constant is *not* the total money supply, which in Picacoin
  * currently happens to be less than 21,000,000 PIC for various reasons, but

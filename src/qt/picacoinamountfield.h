@@ -34,13 +34,13 @@ public:
     /** If allow empty is set to false the field will be set to the minimum allowed value if left empty. **/
     void SetAllowEmpty(bool allow);
 
-    /** Set the minimum value in picaros **/
+    /** Set the minimum value in picaro **/
     void SetMinValue(const CAmount& value);
 
-    /** Set the maximum value in picaros **/
+    /** Set the maximum value in picaro **/
     void SetMaxValue(const CAmount& value);
 
-    /** Set single step in picaros **/
+    /** Set single step in picaro **/
     void setSingleStep(const CAmount& step);
 
     /** Make read-only **/

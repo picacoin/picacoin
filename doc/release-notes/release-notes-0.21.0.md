@@ -467,7 +467,7 @@ was already being broken by the move to descriptors.
   command line setting. The wallet will already fail to create transactions
   with fees higher than `-maxtxfee`. (#18467)
 
-- A new `fee_rate` parameter/option denominated in picaros per vbyte (sat/vB)
+- A new `fee_rate` parameter/option denominated in picaro per vbyte (sat/vB)
   is introduced to the `sendtoaddress`, `sendmany`, `fundrawtransaction` and
   `walletcreatefundedpsbt` RPCs as well as to the experimental new `send`
   RPC. The legacy `feeRate` option in `fundrawtransaction` and

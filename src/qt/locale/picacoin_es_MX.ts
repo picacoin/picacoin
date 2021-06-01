@@ -810,8 +810,8 @@ Solicitar pagos (genera códigos QR y picacoin: URI)
         <translation>Esta capa se vuelve roja si algún destinatario recibe un monto menor al actual limite del remanente monetario </translation>
     </message>
     <message>
-        <source>Can vary +/- %1 satoshi(s) per input.</source>
-        <translation>Can vary +/- %1 satoshi(s) per input.</translation>
+        <source>Can vary +/- %1 picaro(s) per input.</source>
+        <translation>Can vary +/- %1 picaro(s) per input.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2407,10 +2407,10 @@ Solicitar pagos (genera códigos QR y picacoin: URI)
     <message>
         <source>Specify a custom fee per kB (1,000 bytes) of the transaction's virtual size.
 
-Note:  Since the fee is calculated on a per-byte basis, a fee of "100 picaros per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 picaros.</source>
+Note:  Since the fee is calculated on a per-byte basis, a fee of "100 picaro per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 picaros.</source>
         <translation>Specify a custom fee per kB (1,000 bytes) of the transaction's virtual size.
 
-Note:  Since the fee is calculated on a per-byte basis, a fee of "100 picaros per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 picaros.</translation>
+Note:  Since the fee is calculated on a per-byte basis, a fee of "100 picaro per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 picaros.</translation>
     </message>
     <message>
         <source>per kilobyte</source>

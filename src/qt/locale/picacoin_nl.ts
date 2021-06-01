@@ -807,8 +807,8 @@ Ondertekenen is alleen mogelijk met adressen van het type 'legacy'.</translation
         <translation>Dit label wordt rood, als een ontvanger een bedrag van minder dan de huidige dust-drempel gekregen heeft.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 satoshi(s) per input.</source>
-        <translation>Kan per input +/- %1 satoshi(s)  variëren.</translation>
+        <source>Can vary +/- %1 picaro(s) per input.</source>
+        <translation>Kan per input +/- %1 picaro(s)  variëren.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2305,10 +2305,10 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
     <message>
         <source>Specify a custom fee per kB (1,000 bytes) of the transaction's virtual size.
 
-Note:  Since the fee is calculated on a per-byte basis, a fee of "100 picaros per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 picaros.</source>
+Note:  Since the fee is calculated on a per-byte basis, a fee of "100 picaro per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 picaros.</source>
         <translation>Specificeer handmatig een vergoeding per kB (1,000 bytes) voor de virtuele grootte van de transactie.
 
-Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "100 picaros per kB" voor een transactie ten grootte van 500 bytes (de helft van 1 kB) uiteindelijk een vergoeding van maar liefst 50 picaros betekenen.</translation>
+Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "100 picaro per kB" voor een transactie ten grootte van 500 bytes (de helft van 1 kB) uiteindelijk een vergoeding van maar liefst 50 picaros betekenen.</translation>
     </message>
     <message>
         <source>per kilobyte</source>
