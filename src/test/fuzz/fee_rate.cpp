@@ -29,7 +29,7 @@ FUZZ_TARGET(fee_rate)
     const CAmount another_picaro_per_k = ConsumeMoney(fuzzed_data_provider);
     CFeeRate larger_fee_rate{another_picaro_per_k};
     larger_fee_rate += fee_rate;
-    if (picaro_per_k != 0 && another_picaros_per_k != 0) {
+    if (picaro_per_k != 0 && another_picaro_per_k != 0) {
         assert(fee_rate < larger_fee_rate);
         assert(!(fee_rate > larger_fee_rate));
         assert(!(fee_rate == larger_fee_rate));

@@ -22,7 +22,7 @@ QList<PicacoinUnits::Unit> PicacoinUnits::availableUnits()
     unitlist.append(PIC);
     unitlist.append(mPIC);
     unitlist.append(uPIC);
-    unitlist.append(pio);
+    unitlist.append(PIO);
     return unitlist;
 }
 
@@ -33,7 +33,7 @@ bool PicacoinUnits::valid(int unit)
     case PIC:
     case mPIC:
     case uPIC:
-    case SAT:
+    case PIO:
         return true;
     default:
         return false;
@@ -47,7 +47,7 @@ QString PicacoinUnits::longName(int unit)
     case PIC: return QString("PIC");
     case mPIC: return QString("mPIC");
     case uPIC: return QString::fromUtf8("µPIC (bits)");
-    case SAT: return QString("Satoshi (pio)");
+    case PIO: return QString("Picaro (pio)");
     default: return QString("???");
     }
 }
@@ -57,7 +57,7 @@ QString PicacoinUnits::shortName(int unit)
     switch(unit)
     {
     case uPIC: return QString::fromUtf8("bits");
-    case SAT: return QString("pio");
+    case PIO: return QString("pio");
     default: return longName(unit);
     }
 }
@@ -69,7 +69,7 @@ QString PicacoinUnits::description(int unit)
     case PIC: return QString("Picacoins");
     case mPIC: return QString("Milli-Picacoins (1 / 1" THIN_SP_UTF8 "000)");
     case uPIC: return QString("Micro-Picacoins (bits) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-    case SAT: return QString("Satoshi (pio) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case PIO: return QString("Picaro (pio) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }
@@ -81,7 +81,7 @@ qint64 PicacoinUnits::factor(int unit)
     case PIC: return 100000000;
     case mPIC: return 100000;
     case uPIC: return 100;
-    case SAT: return 1;
+    case PIO: return 1;
     default: return 100000000;
     }
 }
@@ -93,7 +93,7 @@ int PicacoinUnits::decimals(int unit)
     case PIC: return 8;
     case mPIC: return 5;
     case uPIC: return 2;
-    case SAT: return 0;
+    case PIO: return 0;
     default: return 0;
     }
 }
