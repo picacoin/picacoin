@@ -210,7 +210,7 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x00000000decb9cc2528a3817c887fa1f286e6d6710f3ecb80ae63f9e044deddb"));
         assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
 
-        vSeeds.emplace_back("159.89.188.140:2313"); 
+        vSeeds.emplace_back("134.122.120.47:2313"); 
         // nodes with support for servicebits filtering should be at the top
        
 
