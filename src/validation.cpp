@@ -57,6 +57,7 @@
 
 #define MICRO 0.000001
 #define MILLI 0.001
+#define PRE_MM 1680000
 
 /**
  * An extra transaction can be added to a package, as long as it only has one
@@ -1139,7 +1140,11 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
     if (halvings >= 64)
         return 0;
 
-    CAmount nSubsidy = 50 * COIN;
+    CAmount nSubsidy;    
+    if (nHeight == 1)
+        nSubsidy = PRE_MM * COIN;
+    else
+        nSubsidy = 50 * COIN;
     // Subsidy is cut in half every 210,000 blocks which will occur approximately every 4 years.
     nSubsidy >>= halvings;
     return nSubsidy;
