@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/84209422/118340240-02511e80-b4d0-11eb-8098-c78591d5ebeb.png" width="256" height="256">
+<img src="https://raw.githubusercontent.com/picacoin/picacoin/main/src/qt/res/icons/picacoin.png" width="256" height="256">
 
 Picacoin Core integration/staging tree
 =====================================
