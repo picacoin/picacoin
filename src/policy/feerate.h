@@ -29,13 +29,13 @@ enum class FeeEstimateMode {
 class CFeeRate
 {
 private:
-    CAmount nSatoshisPerK; // unit is picaro-per-1,000-bytes
+    CAmount nPicarosPerK; // unit is picaro-per-1,000-bytes
 
 public:
     /** Fee rate of 0 picaro per kB */
-    CFeeRate() : nSatoshisPerK(0) { }
+    CFeeRate() : nPicarosPerK(0) { }
     template<typename I>
-    explicit CFeeRate(const I _nSatoshisPerK): nSatoshisPerK(_nSatoshisPerK) {
+    explicit CFeeRate(const I _nPicarosPerK): nPicarosPerK(_nPicarosPerK) {
         // We've previously had bugs creep in from silent double->int conversion...
         static_assert(std::is_integral<I>::value, "CFeeRate should be used without floats");
     }
@@ -57,16 +57,16 @@ public:
      * Return the fee in picaro for a size of 1000 bytes
      */
     CAmount GetFeePerK() const { return GetFee(1000); }
-    friend bool operator<(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK < b.nSatoshisPerK; }
-    friend bool operator>(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK > b.nSatoshisPerK; }
-    friend bool operator==(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK == b.nSatoshisPerK; }
-    friend bool operator<=(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK <= b.nSatoshisPerK; }
-    friend bool operator>=(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK >= b.nSatoshisPerK; }
-    friend bool operator!=(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK != b.nSatoshisPerK; }
-    CFeeRate& operator+=(const CFeeRate& a) { nSatoshisPerK += a.nSatoshisPerK; return *this; }
+    friend bool operator<(const CFeeRate& a, const CFeeRate& b) { return a.nPicarosPerK < b.nPicarosPerK; }
+    friend bool operator>(const CFeeRate& a, const CFeeRate& b) { return a.nPicarosPerK > b.nPicarosPerK; }
+    friend bool operator==(const CFeeRate& a, const CFeeRate& b) { return a.nPicarosPerK == b.nPicarosPerK; }
+    friend bool operator<=(const CFeeRate& a, const CFeeRate& b) { return a.nPicarosPerK <= b.nPicarosPerK; }
+    friend bool operator>=(const CFeeRate& a, const CFeeRate& b) { return a.nPicarosPerK >= b.nPicarosPerK; }
+    friend bool operator!=(const CFeeRate& a, const CFeeRate& b) { return a.nPicarosPerK != b.nPicarosPerK; }
+    CFeeRate& operator+=(const CFeeRate& a) { nPicarosPerK += a.nPicarosPerK; return *this; }
     std::string ToString(const FeeEstimateMode& fee_estimate_mode = FeeEstimateMode::PIC_KVB) const;
 
-    SERIALIZE_METHODS(CFeeRate, obj) { READWRITE(obj.nSatoshisPerK); }
+    SERIALIZE_METHODS(CFeeRate, obj) { READWRITE(obj.nPicarosPerK); }
 };
 
 #endif //  PICACOIN_POLICY_FEERATE_H
