@@ -12,7 +12,7 @@
  * for both picacoind and picacoin-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("Satoshi");
+const std::string CLIENT_NAME("Picaro");
 
 
 #ifdef HAVE_BUILD_INFO

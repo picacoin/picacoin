@@ -121,7 +121,7 @@ public:
  
         vSeeds.emplace_back("134.122.120.47:2313");
 	vSeeds.emplace_back("143.198.143.180:2313"); 
-	
+	vSeeds.emplace_back("66.228.34.29:2313");	
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,128);
